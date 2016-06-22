@@ -247,11 +247,11 @@ if has("cscope")
   set nocsverb
 
   " add any database in current directory   
-  " if filereadable("cscope.out")  
-  " cs add cscope.out  
-  " endif 
-  " set csverb  
-  " endif 
+  if filereadable("cscope.out") 
+    cs add cscope.out
+  endif
+  set csverb
+  " endif
 
   nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
   nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
